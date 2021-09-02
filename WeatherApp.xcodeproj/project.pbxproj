@@ -15,6 +15,11 @@
 		EC51DA3D26E0908200D278C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC51DA3B26E0908200D278C3 /* LaunchScreen.storyboard */; };
 		EC51DA4826E0908200D278C3 /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51DA4726E0908200D278C3 /* WeatherAppTests.swift */; };
 		EC51DA5326E0908200D278C3 /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51DA5226E0908200D278C3 /* WeatherAppUITests.swift */; };
+		EC51DA6226E0ACFC00D278C3 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51DA6126E0ACFC00D278C3 /* NetworkController.swift */; };
+		EC51DA6426E0B54B00D278C3 /* OpenWeatherMapNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51DA6326E0B54B00D278C3 /* OpenWeatherMapNetworkController.swift */; };
+		EC51DA6626E0B84800D278C3 /* OpenWeatherMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51DA6526E0B84800D278C3 /* OpenWeatherMapModel.swift */; };
+		EC51DA6926E0C39A00D278C3 /* ApixuDataMappings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51DA6726E0C39900D278C3 /* ApixuDataMappings.swift */; };
+		EC51DA6A26E0C39A00D278C3 /* ApixuNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51DA6826E0C39A00D278C3 /* ApixuNetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		EC51DA4E26E0908200D278C3 /* WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC51DA5226E0908200D278C3 /* WeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITests.swift; sourceTree = "<group>"; };
 		EC51DA5426E0908200D278C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC51DA6126E0ACFC00D278C3 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		EC51DA6326E0B54B00D278C3 /* OpenWeatherMapNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapNetworkController.swift; sourceTree = "<group>"; };
+		EC51DA6526E0B84800D278C3 /* OpenWeatherMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapModel.swift; sourceTree = "<group>"; };
+		EC51DA6726E0C39900D278C3 /* ApixuDataMappings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApixuDataMappings.swift; sourceTree = "<group>"; };
+		EC51DA6826E0C39A00D278C3 /* ApixuNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApixuNetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		EC51DA2F26E0908000D278C3 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				EC51DA6026E0AA8B00D278C3 /* Network */,
 				EC51DA3026E0908000D278C3 /* AppDelegate.swift */,
 				EC51DA3226E0908000D278C3 /* SceneDelegate.swift */,
 				EC51DA3426E0908000D278C3 /* ViewController.swift */,
@@ -126,6 +137,18 @@
 				EC51DA5426E0908200D278C3 /* Info.plist */,
 			);
 			path = WeatherAppUITests;
+			sourceTree = "<group>";
+		};
+		EC51DA6026E0AA8B00D278C3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EC51DA6726E0C39900D278C3 /* ApixuDataMappings.swift */,
+				EC51DA6826E0C39A00D278C3 /* ApixuNetworkController.swift */,
+				EC51DA6126E0ACFC00D278C3 /* NetworkController.swift */,
+				EC51DA6326E0B54B00D278C3 /* OpenWeatherMapNetworkController.swift */,
+				EC51DA6526E0B84800D278C3 /* OpenWeatherMapModel.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +281,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC51DA6226E0ACFC00D278C3 /* NetworkController.swift in Sources */,
 				EC51DA3526E0908000D278C3 /* ViewController.swift in Sources */,
+				EC51DA6926E0C39A00D278C3 /* ApixuDataMappings.swift in Sources */,
 				EC51DA3126E0908000D278C3 /* AppDelegate.swift in Sources */,
+				EC51DA6A26E0C39A00D278C3 /* ApixuNetworkController.swift in Sources */,
+				EC51DA6626E0B84800D278C3 /* OpenWeatherMapModel.swift in Sources */,
 				EC51DA3326E0908000D278C3 /* SceneDelegate.swift in Sources */,
+				EC51DA6426E0B54B00D278C3 /* OpenWeatherMapNetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +473,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.prashantghimire.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -463,7 +491,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.prashantghimire.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

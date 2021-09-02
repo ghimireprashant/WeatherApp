@@ -29,5 +29,24 @@ class WeatherAppTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+  func testOpenWeatherMap() {
+    // This is an example of a functional test case.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    let exp = expectation(description: "Get weather data")
+    
+    let controller = OpenWeatherMapNetworkController()
+    let city = "Carpinteria"
+    controller.self.fetchCurrentWeatherData(city: city) { (weatherData, error) in
+      XCTAssertNil(error, "fetchWeatherData() call returned error: \(error?.localizedDescription ?? "")")
+      if let data = weatherData {
+        print("Weather in \(city): \(data.condition), \(data.temperature)\(data.unit)")
+        exp.fulfill()
+      } else {
+        XCTFail("no data returned by fetchWeatherData()")
+      }
+    }
+    
+    waitForExpectations(timeout: 10, handler: nil)
+  }
 
 }
